@@ -24,10 +24,9 @@ const reducer = (state:RoleObject, action:{type: string}):RoleObject => {
 export default function Page() {
   
   const [state, dispatch] = useReducer(reducer, {role: "Frontend Developer", index: 1});
-  let intervalID:NodeJS.Timeout; 
   
   useEffect(() => {
-    intervalID = setInterval(() => {
+    const intervalID = setInterval(() => {
       dispatch({type:"roleIncrement"});
       dispatch({type:"indIncrement"});
     }, 3000);
@@ -42,7 +41,7 @@ export default function Page() {
           <div>
             <h1 className="text-7xl font-semibold">
               <span className="text-5xl flex gap-4 items-center">
-                I' am
+                I{`'`} am
               <Image src="/img/myself.png" alt="skills" width="64" height="64"/>
               </span>
               <span className="uppercase block py-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-100 via-sky-300 to-teal-600 animate-pulse">Adesh Singh</span>
@@ -56,7 +55,7 @@ export default function Page() {
               <span className="w-4 h-4 rounded-full bg-yellow-500"></span>
             </div>
             <p className="px-5 pb-8 text-lg text-gray-300">
-            Hello, I'm a passionate self-taught full-stack web developer dedicated to crafting high-quality digital experiences. With a keen interest in modern web technologies, I've honed my skills across various domains to build fast, responsive, and secure web applications.
+            Hello, I{`'`}m a passionate self-taught full-stack web developer dedicated to crafting high-quality digital experiences. With a keen interest in modern web technologies, I{`'`}ve honed my skills across various domains to build fast, responsive, and secure web applications.
             </p>
           </div>
         </div>

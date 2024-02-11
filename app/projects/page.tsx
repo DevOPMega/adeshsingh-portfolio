@@ -11,7 +11,7 @@ export default function ProjectsPage() {
                     <Image src="/img/project.png" alt="skills" width="64" height="64" />
                 </h1>
                 <p className="text-gray-300 text-lg">
-                    I've used the MERN(MongoDB, Express JS, React JS, Node JS) tech stack for building my projects. Let's see its benefit before seeing my projects that utilize this modern, secure and responsive technology.
+                    I{`'`}ve used the MERN(MongoDB, Express JS, React JS, Node JS) tech stack for building my projects. Let{`'`}s see its benefit before seeing my projects that utilize this modern, secure and responsive technology.
                 </p>
                 <h2 className="pt-10 text-2xl font-bold text-gray-100 flex items-center gap-4">Tech Stacks
                     <Image src="/img/techstack.png" alt="skills" width="32" height="32" />
