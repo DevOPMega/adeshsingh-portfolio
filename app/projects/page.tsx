@@ -1,5 +1,11 @@
 import Image from "next/image";
-import { techStacks, projects } from "./data"
+import { Metadata } from "next";
+import { techStacks, projects } from "./data";
+
+export const metadata: Metadata = {
+    title: "Projects",
+    description: "Projects created by Adesh Singh"
+}
 
 export default function ProjectsPage() {
     const backgrounds = ["bghackathon", "bgamazon"];

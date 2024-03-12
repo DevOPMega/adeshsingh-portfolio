@@ -3,10 +3,19 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "./globals.css";
 import Video from "./components/Video";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: 'Adesh Singh Portfolio',
+export const metadata: Metadata = {
+  title: {
+    template: "%s | Adesh Singh",
+    default: "Adesh Singh"
+  },
   description: 'Adesh Singh Portfolio',
+  authors: [{name: "Adesh Singh"}],
+  creator: "Adesh Singh",
+  publisher: "Adesh Singh",
+  keywords: ["Portffolio", "Adesh Singh", "Developer", "Next.js", "React.js", "Javascript"],
+  
 }
 
 const roboto = Roboto({weight: "400",subsets: ["latin"]})
