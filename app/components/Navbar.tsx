@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Navlinks from "./Navlinks"
+import Link from "next/link";
 
 const Navbar = () => {
     const [navShow, setNavShow] = useState(false);
@@ -8,7 +9,9 @@ const Navbar = () => {
     return (
         <div className="bg-slate-900 px-10 pt-7 pb-6  text-white flex justify-between">
             <div>
-                <h1 className="text-2xl font-semibold underline lg:pl-20">Adesh Singh</h1>
+                <Link href="/">
+                    <h1 className="text-2xl font-semibold underline lg:pl-20">Adesh Singh</h1>
+                </Link>
             </div>  
             <div className="flex flex-col gap-1 sm:hidden cursor-pointer" onClick={() => {
                 setNavShow(navShow => !navShow);

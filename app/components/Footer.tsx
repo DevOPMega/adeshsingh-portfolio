@@ -10,7 +10,7 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col gap-4">
                     <h2 className="text-lg font-semibold">Go To</h2>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-3">
                         <Navlinks />
                     </div>
                 </div> 
@@ -20,8 +20,6 @@ export default function Footer() {
                         <Socialmedia name={true} />
                     </div>
                 </div>
-                
-                
             </div>
         </footer>
     )

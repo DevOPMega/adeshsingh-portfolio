@@ -3,6 +3,8 @@ import {useReducer, useEffect} from "react";
 import Image from "next/image";
 import Socialmedia from "./components/Socialmedia";
 import Connectform from "./components/Connectform";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
 
 type RoleObject = {
   role: string; 
@@ -47,6 +49,11 @@ export default function Page() {
               <span className="uppercase block py-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-100 via-sky-300 to-teal-600 animate-pulse">Adesh Singh</span>
             </h1>
             <h3 className="text-2xl font-medium ">{state.role}</h3>
+            <div className="mt-5">
+              <a 
+               className="bg-blue-600 text-white text-lg rounded-md px-4 py-2"
+                href="/resume.pdf" download="cv">Resume</a>
+            </div>
           </div>
           <div className="rounded-lg border-8 border-slate-900 bg-stone-900">
             <div className="flex gap-4 px-5 py-4 mb-4 bg-slate-900">
@@ -58,6 +65,14 @@ export default function Page() {
             Hello, I{`'`}m a passionate self-taught full-stack web developer dedicated to crafting high-quality digital experiences. With a keen interest in modern web technologies, I{`'`}ve honed my skills across various domains to build fast, responsive, and secure web applications.
             </p>
           </div>
+        </div>
+
+        <div className="px-6 py-10 mx-auto ">
+          <Projects />          
+        </div>
+
+        <div className="px-6 py-10 mx-auto ">
+          <Skills />          
         </div>
 
         {/* Connect to me section */}
