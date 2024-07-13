@@ -12,7 +12,15 @@ export default function SignupForm() {
   } = useForm();
 
   const onSubmit = async (data: FieldValues) => {
-    console.log(data);
+    const response = await fetch("http://localhost:5000/api/register", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify(data)
+    });
+    console.log(response.json());
     reset();
   };
   return (
@@ -20,14 +28,6 @@ export default function SignupForm() {
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col mt-10 space-y-4"
     >
-        <input
-        {...register("name", {
-          required: "Name is required",
-        })}
-        type="text"
-        className="w-full p-2 text-lg text-black outline-none rounded-md focus:outline-4 focus:outline-blue-500 placeholder:text-slate-500"
-        placeholder="John Snow"
-      />
       <input
         {...register("email", {
           required: "Email is required",

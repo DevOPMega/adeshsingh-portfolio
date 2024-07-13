@@ -12,7 +12,15 @@ export default function LoginForm() {
   } = useForm();
 
   const onSubmit = async (data: FieldValues) => {
-    console.log(data);
+    const response = await fetch("http://localhost:5000/api/login", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify(data)
+    });
+    console.log(response.json());
     reset();
   };
   return (
