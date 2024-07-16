@@ -4,38 +4,46 @@ import Footer from "./components/Footer";
 import "./globals.css";
 import Video from "./components/Video";
 import type { Metadata } from "next";
+import UserContext from "@/context/context";
 
 export const metadata: Metadata = {
   title: {
     template: "%s | Adesh Singh",
-    default: "Adesh Singh"
+    default: "Adesh Singh",
   },
-  description: 'Adesh Singh Portfolio',
-  authors: [{name: "Adesh Singh"}],
+  description: "Adesh Singh Portfolio",
+  authors: [{ name: "Adesh Singh" }],
   creator: "Adesh Singh",
   publisher: "Adesh Singh",
-  keywords: ["Portffolio", "Adesh Singh", "Developer", "Next.js", "React.js", "Javascript"],
-  
-}
+  keywords: [
+    "Portffolio",
+    "Adesh Singh",
+    "Developer",
+    "Next.js",
+    "React.js",
+    "Javascript",
+  ],
+};
 
-const roboto = Roboto({weight: "400",subsets: ["latin"]})
+const roboto = Roboto({ weight: "400", subsets: ["latin"] });
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-
   return (
     <html lang="en">
       <body className="bg-[url('/img/parabolic-pentagon.png')] bg-cover bg-fixed bg-no-repeat text-gray-200">
-        <main className={roboto.className} >
+        <main className={roboto.className}>
           <Video />
-          <Navbar />
-          {children}
-          <Footer />
+          <UserContext>
+            <Navbar />
+            {children}
+            <Footer />
+          </UserContext>
         </main>
       </body>
     </html>
-  )
+  );
 }
