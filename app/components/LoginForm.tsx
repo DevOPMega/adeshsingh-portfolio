@@ -26,13 +26,13 @@ export default function LoginForm() {
     const parseResponse = await response.json();
     if (response.status === 200) {      
       toast.success(parseResponse.message);
+      localStorage.setItem("uid", parseResponse.uid);
       setUser({
         ...user,
-        email: parseResponse.userCredential.user.email,
-        uid: parseResponse.userCredential.user.uid
+        email: parseResponse.email,
+        uid: parseResponse.uid
       });
       setTimeout(() => {
-        console.log(user);
         router.push("/user");
       }, 5000);
     }
@@ -62,6 +62,7 @@ export default function LoginForm() {
           type="email"
           className={`w-full p-2 text-lg text-black outline-none rounded-md focus:outline-4 ${errors.email ? 'focus:outline-red-500':'focus:outline-blue-500'} placeholder:text-slate-500`}
           placeholder="john12@gmail.com"
+          autoComplete="email"
         />
         {errors.email && (
           <p className="text-base text-yellow-400">{`${errors.email.message}`}</p>
@@ -77,6 +78,7 @@ export default function LoginForm() {
           type="password"
           className={`w-full p-2 text-lg text-black outline-none rounded-md focus:outline-4 ${errors.email ? 'focus:outline-red-500':'focus:outline-blue-500'} placeholder:text-slate-500`}
           placeholder="password"
+          autoComplete="current-password"
         />
         {errors.password && (
           <p className="text-base text-yellow-400">{`${errors.password.message}`}</p>
@@ -90,6 +92,7 @@ export default function LoginForm() {
           type="password"
           className={`w-full p-2 text-lg text-black outline-none rounded-md focus:outline-4 ${errors.email ? 'focus:outline-red-500':'focus:outline-blue-500'} placeholder:text-slate-500`}
           placeholder="confirm password"
+          autoComplete="current-password"
         />
         {errors.confirmPassword && (
           <p className="text-base text-yellow-400">{`${errors.confirmPassword.message}`}</p>
@@ -99,7 +102,7 @@ export default function LoginForm() {
           disabled={isSubmitting}
           className="p-2 font-bold text-lg rounded-md bg-blue-600"
         >
-          Login
+          {isSubmitting ? "Processing..." : "Login"}
         </button>
       </form>
     </>
