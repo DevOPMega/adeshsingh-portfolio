@@ -3,11 +3,8 @@ import { useForm } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 import { signupUser } from "@/utils/signin";
 import Toast from "./Toast";
-
-const signupURI = process.env.NEXT_PUBLIC_API_REGISTER || "";
 
 export default function SignupForm() {
   const {
@@ -37,7 +34,6 @@ export default function SignupForm() {
   return (
     <>
       <Toast />
-
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col mt-10 space-y-4"
@@ -49,6 +45,7 @@ export default function SignupForm() {
           type="email"
           className="w-full p-2 text-lg text-black outline-none rounded-md focus:outline-4 focus:outline-blue-500 placeholder:text-slate-500"
           placeholder="john12@gmail.com"
+          autoComplete="email"
         />
         {errors.email && (
           <p className="text-base text-yellow-400">{`${errors.email.message}`}</p>
@@ -64,6 +61,7 @@ export default function SignupForm() {
           type="password"
           className="w-full p-2 text-lg text-black outline-none rounded-md focus:outline-4 focus:outline-blue-500  placeholder:text-slate-500"
           placeholder="password"
+          autoComplete="new-password"
         />
         {errors.password && (
           <p className="text-base text-yellow-400">{`${errors.password.message}`}</p>
