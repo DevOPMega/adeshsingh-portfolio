@@ -5,12 +5,14 @@ import type { Dispatch, SetStateAction } from "react";
 
 type UserType = {
     email: string;
-    uid: string;
+    name: string ;
+    phoneNo: string;
 }
 
 const userInitial = {
     email: "",
-    uid: "",
+    name: "",
+    phoneNo: ""
 }
 
 export const User = createContext<{ user: UserType; setUser: Dispatch<SetStateAction<UserType>>; }>(

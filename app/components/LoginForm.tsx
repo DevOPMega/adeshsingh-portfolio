@@ -19,7 +19,6 @@ export default function LoginForm() {
     getValues,
   } = useForm();
   const router = useRouter();
-  const {user, setUser} = useContext(User);
 
   const onSubmit = async (data: FieldValues) => {
     const response = await loginUser(data);
@@ -27,11 +26,6 @@ export default function LoginForm() {
     if (response.status === 200) {      
       toast.success(parseResponse.message);
       localStorage.setItem("uid", parseResponse.uid);
-      setUser({
-        ...user,
-        email: parseResponse.email,
-        uid: parseResponse.uid
-      });
       setTimeout(() => {
         router.push("/user");
       }, 5000);
