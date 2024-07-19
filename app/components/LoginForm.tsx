@@ -1,14 +1,10 @@
 "use client";
-import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
-import { User } from "@/context/context";
 import { loginUser } from "@/utils/login";
 import Toast from "./Toast";
-
-const loginURI: string = process.env.NEXT_PUBLIC_API_LOGIN || "";
 
 export default function LoginForm() {
   const {
@@ -25,7 +21,6 @@ export default function LoginForm() {
     const parseResponse = await response.json();
     if (response.status === 200) {      
       toast.success(parseResponse.message);
-      localStorage.setItem("uid", parseResponse.uid);
       setTimeout(() => {
         router.push("/user");
       }, 5000);
