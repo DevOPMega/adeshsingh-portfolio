@@ -62,7 +62,7 @@ export default function UserProfile() {
       >
         <div className="flex flex-col">
           <span className="text-slate-200">Email ID</span>
-          <span className="mt-2 text-slate-300 text-base border-b">
+          <span className="mt-2 px-2 py-2 text-slate-300 text-base border-b">
             {user.email}
           </span>
         </div>
