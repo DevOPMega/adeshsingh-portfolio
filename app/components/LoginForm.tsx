@@ -5,6 +5,21 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { loginUser } from "@/utils/login";
 import Toast from "./Toast";
+import { motion } from "framer-motion";
+
+const fadeInVariants = {
+  hidden: {
+    opacity: 0,
+    scale: 0
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.8
+    }
+  }
+}
 
 export default function LoginForm() {
   const {
@@ -40,7 +55,10 @@ export default function LoginForm() {
   return (
     <>
       <Toast />
-      <form
+      <motion.form
+        variants={fadeInVariants}
+        initial="hidden"
+        animate="visible"
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col mt-10 space-y-4"
       >
@@ -93,7 +111,7 @@ export default function LoginForm() {
         >
           {isSubmitting ? "Processing..." : "Login"}
         </button>
-      </form>
+      </motion.form>
     </>
   );
 }

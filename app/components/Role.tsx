@@ -1,7 +1,6 @@
 "use client";
-
 import { useReducer, useEffect } from "react";
-
+import { motion } from "framer-motion";
 type RoleObject = {
   role: string;
   index: number;
@@ -23,6 +22,18 @@ const reducer = (state: RoleObject, action: { type: string }): RoleObject => {
   return state;
 };
 
+const roleVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.4,
+    },
+  },
+};
+
 export default function Role() {
   const [state, dispatch] = useReducer(reducer, {
     role: "Frontend Developer",
@@ -38,5 +49,14 @@ export default function Role() {
     return () => clearInterval(intervalID);
   }, [state]);
 
-  return <h3 className="text-2xl font-medium ">{state.role}</h3>;
+  return (
+    <motion.h3
+      variants={roleVariants}
+      initial="hidden"
+      animate="visible"
+      className="text-2xl font-medium "
+    >
+      {state.role}
+    </motion.h3>
+  );
 }

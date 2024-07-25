@@ -1,8 +1,17 @@
 "use client";
+import { useContext } from "react";
 import Link from "next/link";
+import { User } from "@/context/context";
 
 export default function Navlinks(props: any) {
-  const navLinks = ["", "Services", "Projects", "About", "Login", "Signup"];
+  const { user } = useContext(User);
+  let navLinks;
+
+  if (user.email) {
+    navLinks = ["", "Services", "Projects", "About"];
+  } else {
+    navLinks = ["", "Services", "Projects", "About", "Login", "Signup"];
+  }
 
   const removeNavShow = () => {
     if (props.setNavShow) {

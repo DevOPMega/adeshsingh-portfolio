@@ -1,4 +1,28 @@
+"use client"
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const skillBoxVariants = {
+  initial: {
+    opacity: 0,
+    y: 100
+  },
+  animate:(index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: index*0.05
+    }
+  }),
+  hover: {
+    y: [0, -5, 0, 5, 0],
+    boxShadow: "0px 0px 8px rgb(255,255,255)",
+    transition: {
+      duration: 1.6,
+      repeat: Infinity
+    }
+  }
+};
 
 export default function Skills() {
   const skills = [
@@ -19,12 +43,20 @@ export default function Skills() {
         </h1>
         <div className="py-6 flex justify-center flex-wrap gap-8">
           {skills.map((skill, i) => (
-            <div
+            <motion.div
+              variants={skillBoxVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true
+              }}
+              whileHover="hover"
+              custom={i}
               key={i}
-              className={`${skill.class} px-4 py-3 rounded-md font-bold text-xl`}
+              className={`${skill.class} px-4 py-3 rounded-md font-bold text-xl cursor-pointer`}
             >
               {skill.skillName}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
