@@ -15,11 +15,23 @@ const config: Config = {
       },
       keyframes: {
         textAnime: {
-          '0% 100%': {background:'linear-gradient(to right, #cffafe, #7dd3fc, #0d9488)', backgroundClip: 'text'},
+          '0%, 100%': {background:'linear-gradient(to right, #cffafe, #7dd3fc, #0d9488)', backgroundClip: 'text'},
           '50%': {background:'linear-gradient(to right, #7dd3fc, #0d9488, #cffafe)',backgroundClip: 'text'}
+        },
+        tilt: {
+          "0% 50% 100%": {
+            transform: "rotate(0deg)"
+          },
+          "25%": {
+            transform: "rotate(-1deg)"
+          },
+          "75%": {
+            transform: "rotate(1deg)"
+          }
         }
       },
       animation: {
+        tilt: "tilt 10s infinite linear",
         textAnime: 'textAnime 1s infinite linear'
       }
     },

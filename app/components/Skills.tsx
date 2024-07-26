@@ -26,22 +26,17 @@ const skillBoxVariants = {
 
 export default function Skills() {
   const skills = [
-    { skillName: "Typescript", class: "bg-red-800 text-white" },
-    { skillName: "Tailwind CSS", class: "bg-blue-700 text-white" },
-    { skillName: "React JS", class: "bg-yellow-500 text-black" },
-    { skillName: "Next JS", class: "bg-green-500 text-black" },
-    { skillName: "Node JS", class: "bg-cyan-500 text-black" },
-    { skillName: "MongoDB", class: "bg-purple-800 text-white" },
-  ];
+    "HTML", "CSS", "JavaScript", "ReactJS", "NextJS", "Redux", "Bootstrap", "Tailwind CSS", "TypeScript", "NodeJS", "ExpressJS", "MongoDB", "SQL"
+  ]
 
   return (
     <>
-      <div className="mx-auto">
+      <div id="Skills" className="mx-auto">
         <h1 className="pb-8 text-5xl font-bold text-gray-100 flex items-center gap-4">
           My Skills
           <Image src="/img/skills.png" alt="skills" width="64" height="64" />
         </h1>
-        <div className="py-6 flex justify-center flex-wrap gap-8">
+        <div className="py-6 flex justify-center flex-wrap gap-4">
           {skills.map((skill, i) => (
             <motion.div
               variants={skillBoxVariants}
@@ -53,9 +48,11 @@ export default function Skills() {
               whileHover="hover"
               custom={i}
               key={i}
-              className={`${skill.class} px-4 py-3 rounded-md font-bold text-xl cursor-pointer`}
+              className="px-[3px] py-[8px] rounded-[10px] bg-gradient-to-r from-indigo-700 via-lime-600 to-emerald-700 cursor-pointer"
             >
-              {skill.skillName}
+              <span
+                className="rounded-[7px] bg-black px-3 py-2 "
+              >{skill}</span>              
             </motion.div>
           ))}
         </div>

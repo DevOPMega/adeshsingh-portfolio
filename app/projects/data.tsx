@@ -10,17 +10,27 @@ export const techStacks: {
 
 export const projects = [
     {
+        name: "Portfolio",
+        techstack: ["NextJS", "Redux", "Typescript", "Tailwind CSS"],
+        img: "portfolio",
+        github: "https://github.com/DevOPMega/adeshsingh-portfolio",
+        live: "https://adeshsingh-portfolio.vercel.app",
+        background: "bghackathon"
+    },
+    {
         name: "Hackathon Clone",
         techstack: ["React JS", "Material UI", "Typescript", "Tailwind CSS"],
         img: "hackathon",
-        url: "https://github.com/DevOPMega/Hackathon-",
+        github: "https://github.com/DevOPMega/Hackathon-",
+        live: "https://adeshsinghhackathon.netlify.app/",
         background: "bghackathon"
     },
     {
         name: "Amazon Clone",
         techstack: ["React JS", "Material UI", "Typescript", "Tailwind CSS"],
         img: "amazon",
-        url: "https://github.com/DevOPMega/E-commerce",
+        github: "https://github.com/DevOPMega/E-commerce",
+        live: "",
         background: "bgamazon"
     }
 ]

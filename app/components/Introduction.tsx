@@ -23,7 +23,7 @@ export default function Introduction() {
       initial="hidden"
       animate="visible"
       transition={{ delay: 0.4, duration: 1.2}}
-      className="h-full w-full text-black bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-30">
+      className="h-full w-full text-black bg-gradient-to-r from-slate-800 to-gray-500/30 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-30">
       <div className="flex gap-4 px-5 py-4 mb-4 bg-slate-900 rounded-t-md">
         <span className="w-4 h-4 rounded-full bg-red-500"></span>
         <span className="w-4 h-4 rounded-full bg-green-500"></span>

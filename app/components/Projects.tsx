@@ -47,6 +47,7 @@ export default function Projects() {
         viewport={{
           once: true
         }}
+        id="Projects"
         className="mx-auto">
         <h1
          className="pb-8 text-5xl font-bold text-gray-100 flex items-center gap-4">
@@ -68,8 +69,9 @@ export default function Projects() {
                 <Image
                   src={`/img/${project.img}.png`}
                   alt="skills"
-                  width="256"
-                  height="256"
+                  width="720"
+                  height="480"
+                  className="w-full h-full"
                 />
               </div>
               <div className="py-4 px-2 bg-slate-900">
@@ -81,13 +83,23 @@ export default function Projects() {
                     <span key={i}>{tech}, </span>
                   ))}
                 </p>
+                <div className="flex justify-between">
                 <a
-                  href={`${project.url}`}
+                  href={`${project.github}`}
                   target="_blank"
-                  className="text-red-500"
+                  className="w-20 bg-red-500 py-1 text-white text-center rounded-lg"
                 >
                   Github
                 </a>
+                <a
+                  href={`${project.live}`}
+                  target="_blank"
+                  className="w-20 bg-blue-500 p-1 text-white text-center rounded-lg"
+                >
+                  Live
+                </a>
+                </div>
+                
               </div>
             </motion.div>
           ))}

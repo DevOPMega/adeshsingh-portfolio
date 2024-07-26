@@ -73,17 +73,9 @@ const Navbar = () => {
       </div>
 
       <div className="justify-end items-center gap-8 hidden sm:flex ">
-        <Navlinks />
-        {
-            user.email && <Link
-            href="/user"
-            className="px-2 py-1 rounded-md bg-blue-600 text-white"
-          >
-            Profile
-          </Link>
-        }
-        
+        <Navlinks />     
       </div>
+      
       <motion.div
         variants={sidebarVariants}
         initial="hidden"
@@ -95,16 +87,6 @@ const Navbar = () => {
         <div className="flex flex-col gap-7 text-center">
           <h1 className="text-3xl font-semibold underline">Adesh Singh</h1>
           <Navlinks setNavShow={setNavShow} />
-          {
-            user.email && (
-            <Link
-              href="/user"
-              className="px-2 py-1 rounded-md bg-blue-600 text-white"
-            >
-              Profile
-            </Link>
-            )
-          }
         </div>
       </motion.div>
     </div>

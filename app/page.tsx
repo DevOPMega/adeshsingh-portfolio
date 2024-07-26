@@ -4,6 +4,7 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Introduction from "./components/Introduction";
 import Name from "./components/Name";
+import About from "./components/About";
 
 export default function Page() {
   return (
@@ -15,6 +16,10 @@ export default function Page() {
         </div>
 
         <div className="px-6 py-10 mx-auto ">
+          <About />
+        </div>
+        
+        <div className="px-6 py-10 mx-auto ">
           <Projects />
         </div>
 
@@ -22,8 +27,9 @@ export default function Page() {
           <Skills />
         </div>
 
+
         {/* Connect to me section */}
-        <div className="py-10 ">
+        <div id="Contact" className="py-10 ">
           <h2 className="pt-8 pb-12 underline text-5xl font-semibold text-center">
             Connect to Me
           </h2>
